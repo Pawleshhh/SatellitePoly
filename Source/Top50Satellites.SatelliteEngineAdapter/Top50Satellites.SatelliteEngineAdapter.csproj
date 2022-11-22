@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="..\Top50Satellites.SatelliteEngine\SatelliteEngine.py" Link="SatelliteEngine.py" />
+    <EmbeddedResource Include="..\Top50Satellites.SatelliteEngine\SatelliteEngine.py" Link="Python\SatelliteEngine.py" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="pythonnet" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Top50Satellites.Common\Top50Satellites.Common.csproj" />
   </ItemGroup>
 
 </Project>

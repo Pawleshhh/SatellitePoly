@@ -5,9 +5,11 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Top50Satellites.SatelliteEngine", "Top50Satellites.SatelliteEngine\Top50Satellites.SatelliteEngine.pyproj", "{CEB9A606-54DF-4BB6-9F1A-8619F3CA1200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top50Satellites.SatelliteEngineAdapter", "Top50Satellites.SatelliteEngineAdapter\Top50Satellites.SatelliteEngineAdapter.csproj", "{789B9B74-81D7-4400-9883-B4F3AF103D6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top50Satellites.SatelliteEngineAdapter", "Top50Satellites.SatelliteEngineAdapter\Top50Satellites.SatelliteEngineAdapter.csproj", "{789B9B74-81D7-4400-9883-B4F3AF103D6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top50Satellites.SatelliteEngineAdapter.Tests", "Top50Satellites.SatelliteEngineAdapter.Tests\Top50Satellites.SatelliteEngineAdapter.Tests.csproj", "{9ED73D41-6235-4885-B943-334B3EFF09BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top50Satellites.SatelliteEngineAdapter.Tests", "Top50Satellites.SatelliteEngineAdapter.Tests\Top50Satellites.SatelliteEngineAdapter.Tests.csproj", "{9ED73D41-6235-4885-B943-334B3EFF09BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top50Satellites.Common", "Top50Satellites.Common\Top50Satellites.Common.csproj", "{088D9B2C-27D3-4183-AFBE-B3E923648E32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{9ED73D41-6235-4885-B943-334B3EFF09BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ED73D41-6235-4885-B943-334B3EFF09BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ED73D41-6235-4885-B943-334B3EFF09BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{088D9B2C-27D3-4183-AFBE-B3E923648E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088D9B2C-27D3-4183-AFBE-B3E923648E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088D9B2C-27D3-4183-AFBE-B3E923648E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088D9B2C-27D3-4183-AFBE-B3E923648E32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
