@@ -1,4 +1,5 @@
 ﻿using Python.Runtime;
+using Top50Satellites.Common;
 using static Top50Satellites.Common.ResourceHelper;
 
 namespace Top50Satellites.SatelliteEngineAdapter;
@@ -54,26 +55,26 @@ internal class PythonEngineAdapter : ISatelliteEngineAdapter
             foreach(dynamic data in result)
             {
                 tleList.Add(new TleData(
-                    data.epoch.ut1,
-                    data.name,
-                    data.model.satnum,
-                    data.model.classification,
-                    data.model.intldesg,
-                    data.model.epochyr,
-                    data.model.epochdays,
-                    data.model.jdsatepoch,
-                    data.model.ndot,
-                    data.model.nddot,
-                    data.model.bstar,
-                    data.model.ephtype,
-                    data.model.elnum,
-                    data.model.inclo,
-                    data.model.nodeo,
-                    data.model.ecco,
-                    data.model.argpo,
-                    data.model.mo,
-                    data.model.no_kozai,
-                    data.model.revnum));
+                    (double)data.epoch.ut1,
+                    (string)data.name,
+                    (int)data.model.satnum,
+                    (string)data.model.classification,
+                    (string)data.model.intldesg,
+                    (int)data.model.epochyr,
+                    (double)data.model.epochdays,
+                    (double)data.model.jdsatepoch,
+                    (double)data.model.ndot,
+                    (double)data.model.nddot,
+                    (double)data.model.bstar,
+                    (int)data.model.ephtype,
+                    (int)data.model.elnum,
+                    (double)data.model.inclo,
+                    (double)data.model.nodeo,
+                    (double)data.model.ecco,
+                    (double)data.model.argpo,
+                    (double)data.model.mo,
+                    (double)data.model.no_kozai,
+                    (int)data.model.revnum));
             }
 
             return tleList;

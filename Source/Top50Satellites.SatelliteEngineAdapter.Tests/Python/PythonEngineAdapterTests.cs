@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace Top50Satellites.SatelliteEngineAdapter.Tests;
@@ -7,15 +6,25 @@ namespace Top50Satellites.SatelliteEngineAdapter.Tests;
 internal class PythonEngineAdapterTests
 {
 
+    #region Properties and fields
+
+    public static string PythonDllPath { get; } = @"C:\Program Files\Python311\python311.dll";
+
+    #endregion
+
     #region Tests
 
     [Test]
-    public async Task GetSatellites_Test()
+    public async Task GetSatellites_ParseVisualTleDataFromFile_ReturnsExpectedTleDataCollection()
     {
-        PythonEngineAdapter engineAdapter = new PythonEngineAdapter(@"C:\Program Files\Python311\python311.dll");
+        // ARRANGE
+        PythonEngineAdapter engineAdapter = new PythonEngineAdapter(PythonDllPath);
 
-        var result = await engineAdapter.GetSatellites(
-            @"D:\Programming\Top50Satellites\Source\Top50Satellites.SatelliteEngineAdapter.Tests\TestData\visual.txt");
+        // ACT
+        var result = await engineAdapter.GetSatellites(TestDataAccessor.TLEVisualPath);
+
+        // ASSERT
+        CollectionAssert.AreEqual(TestDataAccessor.TLEVisualParsed.Value, result);
     }
 
     #endregion

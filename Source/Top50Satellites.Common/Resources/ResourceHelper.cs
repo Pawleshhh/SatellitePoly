@@ -19,4 +19,7 @@ public static class ResourceHelper
         return reader.ReadToEnd();
     }
 
+    public static string GetAssemblyPath<T>()
+        => Path.GetDirectoryName(typeof(T).Assembly.Location) ?? string.Empty;
+
 }
