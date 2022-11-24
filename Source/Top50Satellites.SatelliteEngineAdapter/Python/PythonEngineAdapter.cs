@@ -12,14 +12,14 @@ internal class PythonEngineAdapter : ISatelliteEngineAdapter
 
     #region Fields
 
-    private readonly Lazy<string> pythonCode =
+    private static readonly Lazy<string> pythonCode =
         new Lazy<string>(() => ReadResource<PythonEngineAdapter>("Top50Satellites.SatelliteEngineAdapter.Python.SatelliteEngine.py"));
 
     #endregion
 
-    #region Constructors
+    #region Initialize engine
 
-    public PythonEngineAdapter(string pythonDllPath)
+    public static void InitializeEngine(string pythonDllPath)
     {
         Runtime.PythonDLL = pythonDllPath;
         PythonEngine.Initialize();
@@ -33,21 +33,28 @@ internal class PythonEngineAdapter : ISatelliteEngineAdapter
     /// <inheritdoc/>
     public Task<TimeSpan> GetSatelliteDataAge(DateTime utcDateTime, TleData satellite)
     {
-        throw new NotImplementedException();
-        //return Task.Run(() => Work<TimeSpan>(m => m.howOldInDays(
-        //    utcDateTime.Year,
-        //    utcDateTime.Month,
-        //    utcDateTime.Day,
-        //    utcDateTime.Hour,
-        //    utcDateTime.Minute,
-        //    utcDateTime.Second,
-        //    satellite.Epoch)));
+        return Task.Run(() => Work(m =>
+        {
+            dynamic timescale = m.getTimescale();
+            dynamic epoch = m.createSkyfieldTime(timescale, satellite.Epoch);
+            dynamic result = m.howOldInDays(
+                timescale,
+                utcDateTime.Year,
+                utcDateTime.Month,
+                utcDateTime.Day,
+                utcDateTime.Hour,
+                utcDateTime.Minute,
+                utcDateTime.Second,
+                epoch);
+
+            return TimeSpan.FromDays((double)result);
+        }));
     }
 
     /// <inheritdoc/>
     public Task<IEnumerable<TleData>> GetSatellites(string tlePath)
     {
-        return Task.Run(() => Work<IEnumerable<TleData>>(m =>
+        return Task.Run(() => Work(m =>
         {
             dynamic result = m.getSatellites(tlePath);
 
@@ -77,7 +84,7 @@ internal class PythonEngineAdapter : ISatelliteEngineAdapter
                     (int)data.model.revnum));
             }
 
-            return tleList;
+            return tleList.AsEnumerable();
         }));
     }
 
