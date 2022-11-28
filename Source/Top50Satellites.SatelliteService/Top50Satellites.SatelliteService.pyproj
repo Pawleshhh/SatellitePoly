@@ -4,13 +4,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a1f724c1-aba2-4912-a82a-1bf92031b3d4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Top50Satellites.SatelliteService.py</StartupFile>
+    <StartupFile>satelliteService.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Top50Satellites.SatelliteService</Name>
     <RootNamespace>Top50Satellites.SatelliteService</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>--observator 23.42 52.11</CommandLineArguments>
+    <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +24,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Top50Satellites.SatelliteService.py" />
+    <Compile Include="satelliteService.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tleData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
