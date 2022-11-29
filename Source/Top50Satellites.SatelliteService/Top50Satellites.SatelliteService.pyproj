@@ -12,7 +12,7 @@
     <Name>Top50Satellites.SatelliteService</Name>
     <RootNamespace>Top50Satellites.SatelliteService</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>--observator 23.42 52.11</CommandLineArguments>
+    <CommandLineArguments>--load ./tleData.txt --observator 23.42 52.11 --position hor --time 2022 11 30 21 23 32 1 10</CommandLineArguments>
     <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -27,6 +27,7 @@
     <Compile Include="satelliteService.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="singleSatellite.txt" />
     <Content Include="tleData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
