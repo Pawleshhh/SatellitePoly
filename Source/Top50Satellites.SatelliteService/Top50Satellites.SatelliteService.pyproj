@@ -24,11 +24,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="modules\initializeArgs.py" />
+    <Compile Include="modules\printResult.py" />
+    <Compile Include="modules\satellite.py" />
+    <Compile Include="modules\__init__.py" />
     <Compile Include="satelliteService.py" />
+    <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="singleSatellite.txt" />
     <Content Include="tleData.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="modules\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
