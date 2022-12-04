@@ -12,7 +12,7 @@
     <Name>Top50Satellites.SatelliteService</Name>
     <RootNamespace>Top50Satellites.SatelliteService</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>--load ./tleData.txt --observator 23.42 52.11 --position hor --time 2022 11 30 21 23 32 1 10</CommandLineArguments>
+    <CommandLineArguments>--load ./singleSatellite.txt -b 23.42 52.11 0 -s "4/12/22 19:55:11 -0400" -i 3000 -d 6</CommandLineArguments>
     <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
