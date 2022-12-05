@@ -12,6 +12,17 @@ def get_month_days(year, monthIndex):
 
     return months[monthIndex - 1]
 
+def find_satellite_by_id(satellites, sat_id):
+
+    if satellites is None or len(satellites) <= 0:
+        return None
+
+    for satellite in satellites:
+        if satellite.model.satnum == sat_id:
+            return satellite
+
+    return None
+
 def load_satellites_tle(tle_path):
     satellites = load.tle_file(tle_path)
     return satellites

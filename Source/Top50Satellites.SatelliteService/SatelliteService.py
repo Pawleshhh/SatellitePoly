@@ -1,9 +1,8 @@
 from skyfield.api import load, wgs84, N, W
-from numpy.polynomial import Chebyshev
-from datetime import datetime, timedelta
 from dateutil.parser import parse
-from modules.initializeArgs import parse_arguments, check_args, get_datetime_format
-from modules.satellite import load_satellites_tle, satellite_horizon_position
+from modules.initializeArgs import parse_arguments, check_args
+from modules.satelliteutil import load_satellites_tle, find_satellite_by_id
+from modules.polynomials import get_polynomials_of_horizon_position
 
 def main():
     args = parse_arguments()
@@ -14,34 +13,30 @@ def main():
     ts = load.timescale()
 
     satellites = load_satellites_tle(args.load)
-    satellite = satellites[0]
+    sat_id = args.id
+    satellite = None
 
+    if sat_id is not None:
+        satellite = find_satellite_by_id(satellites, sat_id)
+    elif len(satellites) > 0:
+        satellite = satellites[0]
+    
+    if satellite is None:
+        print("Could not find satellite")
+        return
+    
     lat, lon, el = args.observator
     observator = wgs84.latlon(lat * N, lon * W, el)
     start = parse(args.start)
     interval = args.interval
     degrees = args.degrees
     
-    date = start
-    altitudes = []
-    azimuths = []
-    seconds_axis = []
-    for second in range(interval):
-        time = ts.from_datetime(date)
-        alt, az, mag = satellite_horizon_position(time, observator, satellite)
-        altitudes.append(alt.degrees)
-        azimuths.append(az.degrees)
-        seconds_axis.append(second)
-        date = date + timedelta(seconds=1)
-        
-    polyfit_alt = Chebyshev.fit(seconds_axis, altitudes, deg=degrees)
-    polyfit_az = Chebyshev.fit(seconds_axis, azimuths, deg=degrees)
+    alt, az, el = get_polynomials_of_horizon_position(ts, start, interval, observator, satellite, degrees)
     
-    print("Altitude polynomial")
-    print(polyfit_alt)
-    print("Azimuth polynomial")
-    print(polyfit_az)
-
+    print(str(alt.coef))
+    print(str(az.coef))
+    print(str(el.coef))
+        
 if __name__ == "__main__":
     main()
     pass

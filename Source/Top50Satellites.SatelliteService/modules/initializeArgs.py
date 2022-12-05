@@ -16,6 +16,10 @@ def parse_arguments():
                         default='./',
                         help='localisation of program\'s output')
     
+    parser.add_argument('--id', dest='id', action='store',
+                        type=int, default=None,
+                        help="id of concrete satellite")
+
     parser.add_argument('--observator', '-b', dest='observator', action='store',
                         type=float, nargs=3, default=[0.0, 0.0, 0.0],
                         help='localisation of the observator {latitude[degrees], longitude[degrees], elevation[meters]}.')
@@ -27,7 +31,7 @@ def parse_arguments():
                         help='seconds since --start')
     parser.add_argument('--degrees', '-d', dest='degrees', action='store',
                         type=int, default=3,
-                        help='specifys degrees of polynomials')
+                        help='specifies degrees of polynomials')
 
     return parser.parse_args()
 
