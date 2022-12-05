@@ -12,9 +12,18 @@ def get_month_days(year, monthIndex):
 
     return months[monthIndex - 1]
 
+def find_satellite_by_id(satellites, sat_id):
+
+    if satellites is None or len(satellites) <= 0:
+        return None
+
+    for satellite in satellites:
+        if satellite.model.satnum == sat_id:
+            return satellite
+
+    return None
+
 def load_satellites_tle(tle_path):
-    """ Load satellites from given location
-    """
     satellites = load.tle_file(tle_path)
     return satellites
 
@@ -28,21 +37,15 @@ def satellite_data_age(t, satellite):
     return t - satellite.epoch
 
 def satellite_position(t, satellite):
-    return [ satellite.at(time) for time in t ]
+    return satellite.at(t)
 
 def satellite_geographic_position(t, satellite):
-    geocentric = [ satellite.at(time) for time in t ]
-    return [ wgs84.geographic_position_of(g) for g in geocentric ]
+    geocentric = satellite.at(t)
+    return wgs84.geographic_position_of(geocentric) 
             
-def satellite_horizon_position(t, geo_position, satellite):
-    coords = wgs84.latlon(geo_position[0] * N, geo_position[1] * W)
-    difference = satellite - coords
-
-    result = []
-    for time in t:
-        result.append(difference.at(time).altaz())
-
-    return result
+def satellite_horizon_position(t, observator, satellite):
+    difference = satellite - observator
+    return difference.at(t).altaz()
 
 def get_time_interval(time, ts):
 
@@ -70,11 +73,3 @@ def get_time_interval(time, ts):
         t = ts.utc(year, month, day, hour, minute, second)
 
     return result
-
-def load_satellites(args):
-    if args.source == 'database':
-        return load_satellites_db(args.load)
-    elif args.source == 'website':
-        return load_satellites_web(args.load)
-    else:
-        return load_satellites_tle(args.load)  
