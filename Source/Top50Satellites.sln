@@ -5,6 +5,10 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Top50Satellites.SatelliteService", "Top50Satellites.SatelliteService\Top50Satellites.SatelliteService.pyproj", "{A1F724C1-ABA2-4912-A82A-1BF92031B3D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top50Satellites.SatelliteServiceWrapper", "Top50Satellites.SatelliteServiceWrapper\Top50Satellites.SatelliteServiceWrapper.csproj", "{8E2AA349-B2B7-4DA3-9072-246190EB16F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top50Satellites.Common", "Top50Satellites.Common\Top50Satellites.Common.csproj", "{C1D12581-9948-4EF6-BCA2-51A6FD315674}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A1F724C1-ABA2-4912-A82A-1BF92031B3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A1F724C1-ABA2-4912-A82A-1BF92031B3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2AA349-B2B7-4DA3-9072-246190EB16F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E2AA349-B2B7-4DA3-9072-246190EB16F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E2AA349-B2B7-4DA3-9072-246190EB16F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2AA349-B2B7-4DA3-9072-246190EB16F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D12581-9948-4EF6-BCA2-51A6FD315674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D12581-9948-4EF6-BCA2-51A6FD315674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D12581-9948-4EF6-BCA2-51A6FD315674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D12581-9948-4EF6-BCA2-51A6FD315674}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
