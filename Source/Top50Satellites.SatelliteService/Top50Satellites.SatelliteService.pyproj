@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pyproject.toml" />
+    <Content Include="README.md" />
     <Content Include="testdata\tle\singleSatellite.txt" />
     <Content Include="testdata\tle\tleData.txt" />
   </ItemGroup>

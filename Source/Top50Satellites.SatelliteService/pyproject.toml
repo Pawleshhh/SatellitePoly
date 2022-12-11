@@ -8,7 +8,7 @@ version = "0.0.1"
 authors = [
   { name="Mateusz Pawlikowski", email="mateuszpawlikowski98@gmail.com" },
 ]
-description = "A small example package"
+description = "Satellite service"
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
