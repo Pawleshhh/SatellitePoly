@@ -1,8 +1,8 @@
 from skyfield.api import load, wgs84, N, W
 from dateutil.parser import parse
-from modules.initializeArgs import parse_arguments, check_args
-from modules.satelliteutil import load_satellites_tle, find_satellite_by_id
-from modules.polynomials import get_polynomials_of_horizon_position
+from initializeargs import parse_arguments, check_args
+from satelliteutil import load_satellites_tle, find_satellite_by_id
+from polynomials import get_polynomials_of_horizon_position
 
 def create_coords_row(name, coords):
     row = name
@@ -46,6 +46,8 @@ def write_polynomials(output, polynomials, satellite, observator, start, interva
 def main():
     args = parse_arguments()
     
+
+
     if check_args(args) == False:
         return
     

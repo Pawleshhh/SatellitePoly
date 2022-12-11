@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a1f724c1-aba2-4912-a82a-1bf92031b3d4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>satelliteService.py</StartupFile>
+    <StartupFile>src\consoleapp.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -12,7 +12,7 @@
     <Name>Top50Satellites.SatelliteService</Name>
     <RootNamespace>Top50Satellites.SatelliteService</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>--load ./tleData.txt -b 23.42 52.11 0 -s "4/12/22 19:55:11 -0400" -i 3000 -d 3</CommandLineArguments>
+    <CommandLineArguments>--load ./testdata/tle/tleData.txt -b 23.42 52.11 0 -s "4/12/22 19:55:11 -0400" -i 3000 -d 3</CommandLineArguments>
     <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -24,19 +24,21 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="modules\initializeArgs.py" />
-    <Compile Include="modules\polynomials.py" />
-    <Compile Include="modules\satelliteutil.py" />
-    <Compile Include="modules\__init__.py" />
-    <Compile Include="satelliteService.py" />
-    <Compile Include="__init__.py" />
+    <Folder Include="testdata\" />
+    <Folder Include="src\" />
+    <Folder Include="testdata\tle\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="singleSatellite.txt" />
-    <Content Include="tleData.txt" />
+    <Compile Include="src\initializeargs.py" />
+    <Compile Include="src\polynomials.py" />
+    <Compile Include="src\consoleapp.py" />
+    <Compile Include="src\satelliteutil.py" />
+    <Compile Include="src\__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="modules\" />
+    <Content Include="pyproject.toml" />
+    <Content Include="testdata\tle\singleSatellite.txt" />
+    <Content Include="testdata\tle\tleData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
