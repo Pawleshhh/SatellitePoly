@@ -36,6 +36,7 @@
     <Compile Include="src\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dist.bat" />
     <Content Include="pyproject.toml" />
     <Content Include="README.md" />
     <Content Include="testdata\tle\singleSatellite.txt" />
