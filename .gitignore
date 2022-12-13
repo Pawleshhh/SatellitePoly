@@ -351,3 +351,7 @@ MigrationBackup/
 
 # Distribution archives directory
 /Source/Top50Satellites.SatelliteService/dist
+/Source/Top50Satellites.SatelliteService/build/lib/satelliteservice
+/Source/Top50Satellites.SatelliteService/PackageName.egg-info
+/Source/Top50Satellites.SatelliteService/satelliteservice.egg-info
+/Source/Top50Satellites.SatelliteService/dist.bat
