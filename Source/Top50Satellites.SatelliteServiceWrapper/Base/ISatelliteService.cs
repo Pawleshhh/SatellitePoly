@@ -5,11 +5,18 @@ namespace Top50Satellites.SatelliteServiceWrapper;
 public interface ISatelliteService
 {
 
-    public IPolyData GetPolynomials(
-        int satelliteId,
+    public IDictionary<SatellitePolyData, IPolyData> GetPolynomials(
+        EarthSatellite earthSatellite,
         ICoordinateSystem3D<double> observer,
         DateTimeOffset start,
-        int interval,
+        TimeSpan interval,
         int degrees);
 
+}
+
+public enum SatellitePolyData
+{
+    Altitude,
+    Azimuth,
+    Elevation
 }

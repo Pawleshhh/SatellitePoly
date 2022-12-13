@@ -3,7 +3,7 @@ requires = ["hatchling", "python-dateutil", "skyfield", "numpy"]
 build-backend = "hatchling.build"
 
 [project]
-name = "satellite_service_Pawleshhh"
+name = "satelliteservice"
 version = "0.0.1"
 authors = [
   { name="Mateusz Pawlikowski", email="mateuszpawlikowski98@gmail.com" },

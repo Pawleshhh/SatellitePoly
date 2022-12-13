@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>a1f724c1-aba2-4912-a82a-1bf92031b3d4</ProjectGuid>
+    <ProjectGuid>c706f4f0-5825-4dca-8433-334d93b1f6df</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>
     </StartupFile>
@@ -10,12 +10,11 @@
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Top50Satellites.SatelliteService</Name>
-    <RootNamespace>Top50Satellites.SatelliteService</RootNamespace>
+    <Name>Top50Satellites.SatelliteService.Console</Name>
+    <RootNamespace>Top50Satellites.SatelliteService.Console</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>
-    </CommandLineArguments>
-    <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
+    <CommandLineArguments>--load ./testdata/tle/tleData.txt -b 23.42 52.11 0 -s "4/12/22 19:55:11 -0400" -i 3000 -d 3</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,20 +25,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="testdata\" />
-    <Folder Include="src\" />
-    <Folder Include="testdata\tle\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="src\initializeargs.py" />
-    <Compile Include="src\polynomials.py" />
-    <Compile Include="src\satelliteutil.py" />
+    <Compile Include="src\consoleapp.py" />
     <Compile Include="src\__init__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dist.bat" />
-    <Content Include="pyproject.toml" />
-    <Content Include="README.md" />
+    <Folder Include="src\" />
+    <Folder Include="testdata\" />
+    <Folder Include="testdata\tle\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="testdata\tle\singleSatellite.txt" />
     <Content Include="testdata\tle\tleData.txt" />
   </ItemGroup>

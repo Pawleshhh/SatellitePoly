@@ -1,8 +1,12 @@
 ﻿namespace Top50Satellites.SatelliteServiceWrapper;
 
-public interface IServiceWrapper
+public interface IServiceWrapper : IDisposable
 {
 
-    public T Execute<T>(string exec, params object[] parameters);
+    public void Initialize();
+    public void Execute(Action action);
+    public Task ExecuteAsync(Action action);
+    public T Execute<T>(Func<T> func);
+    public Task<T> ExecuteAsync<T>(Func<T> func);
 
 }
