@@ -26,15 +26,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="satservice\" />
     <Folder Include="testdata\" />
-    <Folder Include="src\" />
     <Folder Include="testdata\tle\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\initializeargs.py" />
-    <Compile Include="src\polynomials.py" />
-    <Compile Include="src\satelliteutil.py" />
-    <Compile Include="src\__init__.py" />
+    <Compile Include="satservice\initializeargs.py" />
+    <Compile Include="satservice\polynomials.py" />
+    <Compile Include="satservice\satelliteutil.py" />
+    <Compile Include="satservice\__init__.py" />
+    <Compile Include="setup.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="dist.bat" />
