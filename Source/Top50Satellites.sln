@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top50Satellites.Common", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Top50Satellites.SatelliteServiceWrapper.Tests", "Top50Satellites.SatelliteServiceWrapper.Tests\Top50Satellites.SatelliteServiceWrapper.Tests.csproj", "{1DA3415F-2BDB-44D7-AEE5-12EE971E7CB5}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Top50Satellites.SatelliteService.Console", "Top50Satellites.SatelliteService.Console\Top50Satellites.SatelliteService.Console.pyproj", "{C706F4F0-5825-4DCA-8433-334D93B1F6DF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +31,6 @@ Global
 		{1DA3415F-2BDB-44D7-AEE5-12EE971E7CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DA3415F-2BDB-44D7-AEE5-12EE971E7CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DA3415F-2BDB-44D7-AEE5-12EE971E7CB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C706F4F0-5825-4DCA-8433-334D93B1F6DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C706F4F0-5825-4DCA-8433-334D93B1F6DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

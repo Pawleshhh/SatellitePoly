@@ -1,9 +1,8 @@
 from skyfield.api import load, wgs84, N, W
 from dateutil.parser import parse
-import satelliteservice
-from satelliteservice.initializeargs import parse_arguments, check_args
-from satelliteservice.satelliteutil import load_satellites_tle, find_satellite_by_id
-from satelliteservice.polynomials import get_polynomials_of_horizon_position
+from initializeargs import parse_arguments, check_args
+from satelliteutil import load_satellites_tle, find_satellite_by_id
+from polynomials import get_polynomials_of_horizon_position
 
 def create_coords_row(name, coords):
     row = name

@@ -54,7 +54,6 @@ internal class PythonSatelliteService : ISatelliteService
 
         PythonServiceWrapper.Execute(() =>
         {
-            dynamic service = Py.Import("satelliteservice");
             dynamic skyfield = Py.Import("skyfield.api");
             dynamic satellite = GetEarthSatellite(skyfield, earthSatellite);
             dynamic ts = skyfield.load.timescale();
@@ -66,7 +65,8 @@ internal class PythonSatelliteService : ISatelliteService
             dynamic dateutilParser = Py.Import("dateutil.parser");
             dynamic startDate = dateutilParser.parse(formattedDate);
 
-            dynamic polyList = service.polynomials.get_polynomials_of_horizon_position(
+            dynamic service = Py.Import("satservice");
+            dynamic polyList = service.get_polynomials_of_horizon_position(
                 ts,
                 startDate,
                 seconds,
