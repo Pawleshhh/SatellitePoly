@@ -1,6 +1,6 @@
-from modules.satelliteutil import satellite_horizon_position
-from numpy.polynomial import Chebyshev
 import numpy as np
+from satelliteutil import satellite_horizon_position
+from numpy.polynomial import Chebyshev
 from datetime import timedelta
 
 def get_polynomials_of_horizon_position(ts, start, interval, observator, satellite, degrees):

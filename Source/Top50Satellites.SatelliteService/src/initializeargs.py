@@ -1,4 +1,5 @@
 import argparse
+from os import path
 from datetime import datetime
 from dateutil.tz import tzoffset
 
@@ -15,7 +16,10 @@ def parse_arguments():
     parser.add_argument('--output', '-o', dest='output', action='store',
                         default='./',
                         help='localisation of program\'s output')
-    
+    parser.add_argument('--count', '-c', dest='count', action='store',
+                        type=int, default=1,
+                        help="number of satellites to download starting from the first one")
+
     parser.add_argument('--id', dest='id', action='store',
                         type=int, default=None,
                         help="id of concrete satellite")
@@ -36,9 +40,17 @@ def parse_arguments():
     return parser.parse_args()
 
 def check_args(args):
-
-    if args.load is None:
-        print('Need to supply location of data')
+    
+    #if path.exists(args.output) == False:
+    #    if path.isdir(args.output):
+    #        print(args.output, ' directory does not exist')
+    #    elif path.isfile(args.output):
+    #        print(args.output, ' file does not exist')
+    #    else:
+    #        print(args.output, ' path does not exist')
+    #    return False
+    if args.count <= 0:
+        print(args.count, ' is wrong. Count must be equal or bigger than 1')
         return False
 
     return True
