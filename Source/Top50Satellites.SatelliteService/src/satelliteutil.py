@@ -27,12 +27,6 @@ def load_satellites_tle(tle_path):
     satellites = load.tle_file(tle_path)
     return satellites
 
-def load_satellites_db(db_path):
-    return 'No database'
-
-def load_satellites_web(web_link):
-    return 'No web'
-
 def satellite_data_age(t, satellite):
     return t - satellite.epoch
 
@@ -50,6 +44,15 @@ def satellite_horizon_position(t, observator, satellite):
 def satellite_equatorial_position(t, observator, satellite):
     difference = satellite - observator
     return difference.at(t).radec()
+
+#def satellite_is_sunlit(t, satellite, start, interval):
+#    time_range = t.utc(start.date.year,
+#                       start.date.month,
+#                       start.date.day,
+#                       start.time.hour,
+#                       start.time.minute,
+#                       range(start.time.second, interval, step=1))
+#    sunlit = satellite.at(time_range).is_sunlit()
 
 def get_time_interval(time, ts):
 
