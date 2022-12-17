@@ -30,6 +30,8 @@ def parse_arguments():
     parser.add_argument('--observator', '-b', dest='observator', action='store',
                         type=float, nargs=3, default=[0.0, 0.0, 0.0],
                         help='localisation of the observator {latitude[degrees], longitude[degrees], elevation[meters]}.')
+    parser.add_argument('--eq', dest='eq', action='store_true',
+                        help='specifies that equatorial coordinates must be computed. Without this flag horizontal coordinates will be generated instead')
     parser.add_argument('--start', '-s', dest='start', action='store',
                         type=str, default=datetime.now().astimezone().strftime(get_datetime_format()),
                         help='start date and time of predicting satellite position. Format - d/m/Y H:M:S z e.g 10/07/09 18:59:11 -0400')

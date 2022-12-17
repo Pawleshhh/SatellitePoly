@@ -47,6 +47,10 @@ def satellite_horizon_position(t, observator, satellite):
     difference = satellite - observator
     return difference.at(t).altaz()
 
+def satellite_equatorial_position(t, observator, satellite):
+    difference = satellite - observator
+    return difference.at(t).radec()
+
 def get_time_interval(time, ts):
 
     def check_time_part(time_parts, max_parts, result):
