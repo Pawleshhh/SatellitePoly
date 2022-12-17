@@ -1,4 +1,5 @@
 import argparse
+from email.policy import default
 from os import path
 from datetime import datetime
 from dateutil.tz import tzoffset
@@ -23,12 +24,14 @@ def parse_arguments():
     parser.add_argument('--id', dest='id', action='store',
                         type=int, default=None,
                         help="id of concrete satellite")
-
+    parser.add_argument('--separator', action='store',
+                        type=str, default=',',
+                        help="specifies separator for output csv file")
     parser.add_argument('--observator', '-b', dest='observator', action='store',
                         type=float, nargs=3, default=[0.0, 0.0, 0.0],
                         help='localisation of the observator {latitude[degrees], longitude[degrees], elevation[meters]}.')
     parser.add_argument('--start', '-s', dest='start', action='store',
-                        type=str, default=datetime.now(tz=tzoffset(None, 0)).strftime(get_datetime_format()),
+                        type=str, default=datetime.now().astimezone().strftime(get_datetime_format()),
                         help='start date and time of predicting satellite position. Format - d/m/Y H:M:S z e.g 10/07/09 18:59:11 -0400')
     parser.add_argument('--interval', '-i', dest='interval', action='store',
                         type=int, default=60,

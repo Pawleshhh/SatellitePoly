@@ -12,7 +12,7 @@
     <Name>Top50Satellites.SatelliteService</Name>
     <RootNamespace>Top50Satellites.SatelliteService</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>--load "http://celestrak.org/NORAD/elements/gp.php?GROUP=visual&amp;FORMAT=tle" -c 50 -b 53.440950067881126 14.5507188199479 0 -s "14/12/22 19:55:11 -0400" -i 3000 -d 2 -o ./Top50Sats.csv</CommandLineArguments>
+    <CommandLineArguments>--load "http://celestrak.org/NORAD/elements/gp.php?GROUP=visual&amp;FORMAT=tle" -c 4 -b 53.440950067881126 14.5507188199479 0 -s "14/12/22 19:55:11 -0400" -i 3000 -d 3 --separator ; -o ./result/Top50Sats.csv</CommandLineArguments>
     <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -28,6 +28,7 @@
     <Compile Include="src\polynomials.py" />
     <Compile Include="src\satelliteutil.py" />
     <Compile Include="src\main.py" />
+    <Compile Include="src\writeoutput.py" />
     <Compile Include="src\__init__.py" />
   </ItemGroup>
   <ItemGroup>
