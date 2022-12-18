@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Top50Satellites.SatelliteService", "Top50Satellites.SatelliteService\Top50Satellites.SatelliteService.pyproj", "{A1F724C1-ABA2-4912-A82A-1BF92031B3D4}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SatellitePoly", "SatellitePoly\SatellitePoly.pyproj", "{A1F724C1-ABA2-4912-A82A-1BF92031B3D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
