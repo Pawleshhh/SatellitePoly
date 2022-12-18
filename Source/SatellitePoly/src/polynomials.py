@@ -3,7 +3,7 @@ from satelliteutil import satellite_horizon_position, satellite_equatorial_posit
 from numpy.polynomial import Chebyshev
 from datetime import timedelta
 
-def poly_horizon_position(ts, start, interval, observator, satellite, degrees):
+def poly_horizon_position(ts, start, interval, observer, satellite, degrees):
     date = start
     altitudes = []
     azimuths = []
@@ -11,7 +11,7 @@ def poly_horizon_position(ts, start, interval, observator, satellite, degrees):
     seconds_axis = []
     for second in range(interval):
         time = ts.from_datetime(date)
-        alt, az, mag = satellite_horizon_position(time, observator, satellite)
+        alt, az, mag = satellite_horizon_position(time, observer, satellite)
         altitudes.append(alt.degrees)
         azimuths.append(az.degrees)
         elevations.append(mag.m)
@@ -24,7 +24,7 @@ def poly_horizon_position(ts, start, interval, observator, satellite, degrees):
 
     return polyfit_alt, polyfit_az, polyfit_el
 
-def poly_equatorial_position(ts, start, interval, observator, satellite, degrees):
+def poly_equatorial_position(ts, start, interval, observer, satellite, degrees):
     date = start
     right_ascensions = []
     declinations = []
@@ -32,7 +32,7 @@ def poly_equatorial_position(ts, start, interval, observator, satellite, degrees
     seconds_axis = []
     for second in range(interval):
         time = ts.from_datetime(date)
-        ra, dec, mag = satellite_equatorial_position(time, observator, satellite)
+        ra, dec, mag = satellite_equatorial_position(time, observer, satellite)
         right_ascensions.append(ra._degrees)
         declinations.append(dec.degrees)
         elevations.append(mag.m)

@@ -10,11 +10,11 @@ from progress.spinner import Spinner
 import signal
 import sys
 
-def poly_coords(eq, ts, start, interval, observator, satellite, degrees):
+def poly_coords(eq, ts, start, interval, observer, satellite, degrees):
     if eq == True:
-        return poly_equatorial_position(ts, start, interval, observator, satellite, degrees)
+        return poly_equatorial_position(ts, start, interval, observer, satellite, degrees)
     else:
-        return poly_horizon_position(ts, start, interval, observator, satellite, degrees)
+        return poly_horizon_position(ts, start, interval, observer, satellite, degrees)
 
 def main():
     args = parse_arguments()
@@ -46,8 +46,8 @@ def main():
         print("Could not find satellite of ", sat_id, " id")
         return
     
-    lat, lon, el = args.observator
-    observator = wgs84.latlon(lat, lon, el)
+    lat, lon, el = args.observer
+    observer = wgs84.latlon(lat, lon, el)
     start = parse(args.start)
     interval = args.interval
     degrees = args.degrees
@@ -61,7 +61,7 @@ def main():
             ts, 
             start, 
             interval, 
-            observator, 
+            observer, 
             satellite, 
             degrees))
         poly_bar.next()
@@ -76,7 +76,7 @@ def main():
         output, 
         poly_of_coords,
         selected_satellites,
-        observator,
+        observer,
         start, 
         interval,
         args.eq,

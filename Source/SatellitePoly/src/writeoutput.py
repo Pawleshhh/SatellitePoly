@@ -33,13 +33,13 @@ def coord_name(eq, index):
     
     return names[index]
 
-def write_polynomials(output, polynomials, satellites, observator, start, interval, eq, separator = ','):
+def write_polynomials(output, polynomials, satellites, observer, start, interval, eq, separator = ','):
     
     with open(output, 'w') as f:
-        observator_row = create_row(['Observator coords', observator], separator)
+        observer_row = create_row(['Observer coords', observer], separator)
         time_row = create_row(['Start date time', start, 'Interval in seconds', interval], separator)
 
-        write_rows([observator_row, time_row], f)
+        write_rows([observer_row, time_row], f)
 
         f.write('\n')
 

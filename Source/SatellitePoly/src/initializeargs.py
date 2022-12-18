@@ -27,9 +27,9 @@ def parse_arguments():
     parser.add_argument('--separator', action='store',
                         type=str, default=',',
                         help="specifies separator for output csv file")
-    parser.add_argument('--observator', '-b', dest='observator', action='store',
+    parser.add_argument('--observer', '-b', dest='observer', action='store',
                         type=float, nargs=3, default=[0.0, 0.0, 0.0],
-                        help='localisation of the observator {latitude[degrees], longitude[degrees], elevation[meters]}.')
+                        help='localisation of the observer {latitude[degrees], longitude[degrees], elevation[meters]}.')
     parser.add_argument('--eq', dest='eq', action='store_true',
                         help='specifies that equatorial coordinates must be computed. Without this flag horizontal coordinates will be generated instead')
     parser.add_argument('--start', '-s', dest='start', action='store',

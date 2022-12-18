@@ -37,12 +37,12 @@ def satellite_geographic_position(t, satellite):
     geocentric = satellite.at(t)
     return wgs84.geographic_position_of(geocentric) 
             
-def satellite_horizon_position(t, observator, satellite):
-    difference = satellite - observator
+def satellite_horizon_position(t, observer, satellite):
+    difference = satellite - observer
     return difference.at(t).altaz()
 
-def satellite_equatorial_position(t, observator, satellite):
-    difference = satellite - observator
+def satellite_equatorial_position(t, observer, satellite):
+    difference = satellite - observer
     return difference.at(t).radec()
 
 #def satellite_is_sunlit(t, satellite, start, interval):
